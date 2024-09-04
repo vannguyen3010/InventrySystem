@@ -1,0 +1,56 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%" class="b-1 shadow-none">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Update User</mat-card-title>
+  </mat-card-header>
+
+    <form [formGroup]="dataForm" autocomplete="off" novalidate (ngSubmit)="createData(dataForm.value)">
+      <mat-card-content >
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+        <mat-error *ngIf="validateControl('firstName')">
+          First Name is required and must be less than 60 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error *ngIf="validateControl('lastName')">
+          Last Name is required and must be less than 60 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input matInput formControlName="userName" />
+        <mat-error *ngIf="validateControl('userName')">
+          User Name is required and must be less than 60 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="validateControl('email')">
+          Email is required and must be less than 100 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-label>Roles</mat-label>
+      <div *ngFor="let role of roles">
+        <mat-checkbox [checked]="isSelected(role.name)" (change)="toggleRoleSelection($event, role.name)">
+          {{ role.name }}
+        </mat-checkbox>
+      </div>
+    </mat-card-content>
+   
+ 
+  <mat-card-actions>
+    <button mat-flat-button color="primary" class="w-100 action-button" [disabled]="!dataForm.valid">Update</button>
+    <button type="button" mat-flat-button color="warn" class="w-100" (click)="redirectToUserList()">Cancel</button>
+  </mat-card-actions>
+</form>
+</mat-card>
+</section>
