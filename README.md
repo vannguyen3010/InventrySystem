@@ -30,11 +30,6 @@ This project is an Inventory Management System designed to manage IT assets. It 
 
 1. **Clone the Repository**
 
-    ```sh
-    git clone https://github.com/Njabulo240/InventorySystem.git
-    cd InventorySystem
-    ```
-
 2. **Setup Database**
 
     Ensure SQL Server is running and update the connection string in `appsettings.json` to match your database configuration.
@@ -60,49 +55,7 @@ The application uses the Code First approach of Entity Framework Core.
 
     The API will be available at `https://localhost:5001/swagger/index.html`.
 
-### Frontend (Angular App)
 
-1. **Navigate to Frontend Directory**
-
-    ```sh
-    cd InventrySystem/InventryUI
-    ```
-
-2. **Install Dependencies**
-
-    Install the necessary npm packages:
-
-    ```sh
-    npm install
-    ```
-
-3. **Update Environment Configuration**
-
-    Update the API endpoint in `src/environments/environment.ts` to match the URL where your backend API is running:
-
-    ```typescript
-    export const environment = {
-      production: false,
-      apiUrl: 'https://localhost:5001'
-    };
-    ```
-
-4. **Run the Angular App**
-
-    Use the following command to start the Angular development server:
-
-    ```sh
-    ng serve
-    ```
-
-    The Angular app will be available at `http://localhost:4200`.
-
-## Login
-
-LOGIN WITH USERNAME OR EMAIL ADDRESS
-> * **Default Administrator Account**
->   * Email:    user@example.com
->   * Password: Password.123
 
 ## Contributing
 
